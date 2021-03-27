@@ -21,7 +21,6 @@ To create an API server preferably in Typescript that supports the following ope
    * The public/private combination mechanisms ensures safety of the cryptocurrency tokens but comes with an additional overhead of the user being required to repeatedly generate a random pair of private/public addresses (or keys), and back up each time one configures a new pair of addresses. As the number of transactions increases, this process becomes cumbersome for the user.
    * HD Wallets, or Hierarchical Deterministic wallets, solve this problem by deriving all the addresses from **a single master seed (hence the name hierarchical). All HD wallets use a variant of the standard 12-word master seed key,** and each time this seed is extended at the end by a counter value which makes it possible to automatically derive an unlimited number of new addresses.
    * [BIP 32]('https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki') talks about the HD wallets proposal and usage in more details
-   * 
  
 ## P2SH n-m multi-sig bitcoin address
 ## Installation
