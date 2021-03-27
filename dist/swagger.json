@@ -1,0 +1,114 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "Bitcoin HD and n-out-of-m Multisignature P2SH Address Generator",
+        "version": "1.0"
+    },
+    "servers": [{
+            "url": "http://localhost:3000"
+        }],
+    "paths": {
+        "/segwit_address_generator/{seedPhrase}/{path}": {
+            "get": {
+                "tags": ["HD Segwit Bitcoin Address"],
+                "description": "Hierarchical Deterministic (HD) Segregated Witness (SegWit) bitcoin address from given seed and path",
+                "parameters": [{
+                        "name": "seedPhrase",
+                        "in": "path",
+                        "description": "Expecting a seed pharse to derive seed",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "seed sock milk update focus rotate barely fade car face mechanic mercy rainbow marry"
+                    }, {
+                        "name": "path",
+                        "in": "path",
+                        "description": "Enter the derivation path",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "m/84'/0'/0'/0/0"
+                    }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "bc1qrd8rth4r228a4qhthk9lf0yve9c90uh4uret3x"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Please Check the Input parameters"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/multisig/{m}/{n}/{Public Keys}": {
+            "get": {
+                "tags": ["n-out-of-m Multisignature (multi-sig) Pay-To-Script-Hash (P2SH) bitcoin address"],
+                "description": "Requires n,m and public keys, Important to note that n<m",
+                "parameters": [{
+                        "name": "m",
+                        "in": "path",
+                        "description": "m value for n-out-of-m",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 2
+                    }, {
+                        "name": "n",
+                        "in": "path",
+                        "description": "n value for n-out-of-m",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 3
+                    }, {
+                        "name": "Public Keys",
+                        "in": "path",
+                        "description": "Array of length n for public keys",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "example": ["02e135e12b4417b41e92e738448cb51581c70f14bf885b0d4056ac2c3cc5c8729c", "022015b568fb0f2f792e2e1d230a7f64e8a75b5d4a3ae549b55c3724cdc148b32c", "02799dc04a8acf04e793ff0f2c35c20c0388529eb964c565a455f13c07123c9ea2"]
+                    }],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "components": {}
+}
