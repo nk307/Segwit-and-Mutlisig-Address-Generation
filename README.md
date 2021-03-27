@@ -45,7 +45,7 @@ http://localhost:3000/api-docs
 ## Demo
 If everything goes well,
 you will have a page like this:
-![openapi image](../express_ts/images/Openapi.jpg)
+![openapi image](images/Openapi.jpg)
 
 
 1. API request 1 HD Segwit Bitcoin Address 
