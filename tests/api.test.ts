@@ -45,7 +45,7 @@ describe("API Testing For Address Creation", () => {
 
   it("Check P2SH Multisig Address Generation Failure: Invalid n and m value", async () => {
     const result = await request(app).get("/multisig/1/1/022015b568fb0f2f792e2e1d230a7f64e8a75b5d4a3ae549b55c3724cdc148b32c");
-    expect(result.text).toMatch("Check the input parameters n must be strictly greater than m for multi-sig address generation");
+    expect(result.text).toMatch("Check the input parameters n must be greater than m for multi-sig address generation");
     expect(result.status).toEqual(412);
   });
 
