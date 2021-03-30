@@ -101,7 +101,9 @@ export class AddressGeneration{
 
 }
 
-
+app.get('/',(req: Request, res: Response) =>{
+  res.status(200).send("hello");
+})
 app.get('/segwit_address_generator/:seedPhrase/:path', (req: Request, res: Response) => {
   const generate=new AddressGeneration()
   var seedPhrase = req.params.seedPhrase;
@@ -159,3 +161,4 @@ app.get('/multisig/:m/:n/:publicKeys', (req: Request, res: Response) => {
 });
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`App listening on PORT ${port}`));
+module.exports={app,AddressGeneration,MultiSigCreation};
