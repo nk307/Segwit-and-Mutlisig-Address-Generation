@@ -4,16 +4,6 @@
     "title": "Bitcoin HD and n-out-of-m Multisignature P2SH Address Generator",
     "version": "1.0"
   },
-  "servers": [
-    {
-      "url": "http://localhost:3000"
-    },
-    {
-      "url": "https://pedantic-nightingale-2a920d.netlify.app",
-      "variables": {},
-      "description": "deployment"
-    }
-  ],
   "paths": {
     "/segwit_address_generator/{seedPhrase}/{path}": {
       "get": {
