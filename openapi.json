@@ -7,6 +7,11 @@
   "servers": [
     {
       "url": "http://localhost:3000"
+    },
+    {
+      "url": "https://pedantic-nightingale-2a920d.netlify.app",
+      "variables": {},
+      "description": "deployment"
     }
   ],
   "paths": {
@@ -25,7 +30,7 @@
             "name": "seedPhrase",
             "required": true,
             "description": "Expecting a seed pharse to derive seed",
-            "example": "seed sock milk update focus rotate barely fade car face mechanic mercy rainbow marry"
+            "example": "glow laugh acquire menu anchor evil occur put hover renew calm purpose marry run speed"
           },
           {
             "in": "path",
