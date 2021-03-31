@@ -39,8 +39,25 @@ For production
 This would start the API server hosting the open API documentation.
 To test and see the usage,
 Go to: 
-http://localhost:3000/api-docs
+**http://localhost:3000/api-docs**
 
+You can also access the hosted service at:
+
+**https://segwit-multisig-address.herokuapp.com/api-docs/#/**
+
+## Deployment and Testing
+For testing the application
+```
+ npm run test
+```
+This would cover all the possible test cases with keeping validation in mind for the input parameters.
+The tests have also considered the proper status codes thrown at various scenarios of testing.
+For example:
+Code	 Description
+200	   OK
+412    Precondition Failed (Input parameters)
+400    Resource Not Found
+500    Internal Server Error
 ## Demo
 If everything goes well,
 you will have a page like this:
